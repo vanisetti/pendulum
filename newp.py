@@ -7,10 +7,10 @@ import matplotlib.pyplot as plt
 import csv
 
 with open('newp.csv', newline='') as csvfile:
-...     reader = csv.DictReader(csvfile)
-...     for row in reader:
-...         print(row['i_episode'], row['alpha'], row['rewards'])
-...
+ reader = csv.DictReader(csvfile)
+ for row in reader:
+  print(row['num_episode'], row['alpha'], row['rewards'])
+
 
 def play(num_episodes, num_steps, policy, update=None):
     time_steps = []

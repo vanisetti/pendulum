@@ -6,11 +6,6 @@ from gym import wrappers
 import matplotlib.pyplot as plt
 import csv
 
-example_file = open('newp.csv','w', newline='') 
-writer=csv.writer(example_file)
-writer.writerow([1,2,3])
-writer.writerow(['a','b','c'])
-
 
 
 def play(num_episodes, num_steps, policy, update=None):
@@ -95,7 +90,7 @@ env = wrappers.Monitor(env, '/tmp/pendulum-experiment-1',force=True)
 scores = []
 std = []
 mean = []
-alpha = 1
+alpha = 0.1
 
 for i in range(1000):
     
@@ -123,6 +118,11 @@ for i in range(1000):
     mean.append(curr_mean[0])
 
 env.close()
+
+example_file = open('newp.csv','w', newline='')
+writer=csv.writer(example_file, delimiter =',')
+writer.writerow(['alpha','episode','score'])
+writer.writerow([alpha, i_episode, scores ])
 
 #plt.plot(std)
 #plt.plot(mean)

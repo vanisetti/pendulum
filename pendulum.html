@@ -23,41 +23,42 @@
 	GitHub repo, research papers you read, etc. Keep the class attributes on the divs to
 	keep your styling consistent (or change them, if you'd like!). -->
 	<div class="description-section">
-		<div class="section-title">Data Source</div>
+		<div class="section-title">Openaigym Environment</div>
 		<div class="section-detail">
-			We obtained our data source from Kevin who works for Kickstarter. He provided us with a data set that contained 40,000 projects along with their descriptions and whether they passed or not.
+			I used a classic control Pendulum environment to begin with but came across troubles with the code as it was too complicated. Hence I used someone else's code on Git Hub which was called the "Weighted Cross Entropy method for inverted pendulum." It was much simpler to work with. 
 		</div>
 	</div>
 
 	<div class="description-section">
-		<div class="section-title">Data Cleaning</div>
+		<div class="section-title">Goal</div>
 		<div class="section-detail">
 
-			In order to make our project more efficient we cut down the words in the Bag of Words. We tried to focus on adjectives which were descriptive rather than articles which didn’t make a difference. 
+			 At first, I knew I wanted to work in an environment where there was no threshold for success. And the Pendulum didn't have that, there was no limit for the high score. Ms.Pries helped me come up witht he idea to change the parameters in the code to see how it affected the scores.We chose to alter the value of alpha and observe the changes in the scores. Previously, we worked on altering the value of alpha for our kickstarted project so it seemed like a good place to start. 
 
 		</div>
 	</div>
 	<div class="description-section">
-		<div class="section-title">Testing Neural Networks</div>
-		<img class="project-img" style="float: right; width: 400px" src="img/TrainingImg.jpg">
+		<div class="section-title">How I went about trying to achieve the goal</div>
+		<img class="project-img" style="float: right; width: 400px" src="pendulum.jpg">
 		<div class="section-detail">
-			The program was created so we could find the best alpha, dropout percent, and hidden neurons for the network to use. We tested these using nested for loops so that we could find the best combination in relation to each other rather than just the best overall constants. We found that using all 40k projects was extremely time consuming, so we had to use only 50 projects instead. Even this took 12 hours to get the approx 400 runs we needed. After those 400 runs, we had the best constants to use for the network. We tried training the network using these constants and using all 40k projects. 
+			I began changing the values of alpha but the scores printed had no structure. There was no way to compare data so I used csv writer to rganize the data. I had three values categorized: alpha, episode number and score. using the tables obtained using csv it was easier to distinguish the data and notice the changes or trends. 
 		</div>
 	</div>
+
+	<div class="description-section">
+		<div class="section-title">Results btained after observation</div>
+		<div class="section-detail">
+
+			csv isn't working properly for me as of the moment. 
+
+		</div>
+	</div>
+
 
 	<div class="description-section">
 		<div class="section-title">Next Steps</div>
 		<div class="section-detail">
-			We haven’t moved on from there but the next step is probably to find a neural service online, where we can train our network on more powerful computers that don’t have such limited memory. 
-
-		</div>
-	</div>
-
-
-	<div class="description-section">
-		<div class="section-title">Special Thanks</div>
-		<div class="section-detail">
-			We would like to thank Fred Benenson for taking the time to Skype with us and Kevin for providing us with the dataset.  
+			Because of a shortage of time, I was only able to experiment with alpha. There was another code whcih included more advanced factors including 'noise' and in the future I'd like to dive deeper into that. 
 
 		</div>
 	</div>

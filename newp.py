@@ -6,10 +6,11 @@ from gym import wrappers
 import matplotlib.pyplot as plt
 import csv
 
-with open('newp.csv', newline='') as csvfile:
- reader = csv.DictReader(csvfile)
- for row in reader:
-  print(row['num_episode'], row['alpha'], row['rewards'])
+example_file = open('newp.csv','w', newline='') 
+writer=csv.writer(example_file)
+writer.writerow([1,2,3])
+writer.writerow(['a','b','c'])
+
 
 
 def play(num_episodes, num_steps, policy, update=None):

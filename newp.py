@@ -90,7 +90,7 @@ env = wrappers.Monitor(env, '/tmp/pendulum-experiment-1',force=True)
 scores = []
 std = []
 mean = []
-alpha = 0
+alpha = 0.5
 
 for i in range(1000):
     
@@ -122,7 +122,9 @@ env.close()
 example_file = open('newp.csv','w', newline='')
 writer=csv.writer(example_file, delimiter =',')
 writer.writerow(['alpha','episode','score'])
-writer.writerow([alpha, i_episode, scores ])
+writer.writerow([alpha, num_episodes, scores ])
+
+writer.close()
 
 #plt.plot(std)
 #plt.plot(mean)

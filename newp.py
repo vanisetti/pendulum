@@ -90,7 +90,7 @@ env = wrappers.Monitor(env, '/tmp/pendulum-experiment-1',force=True)
 scores = []
 std = []
 mean = []
-alpha = 2
+alpha = 0.5
 count=0
 for i in range(1000):
     

@@ -91,13 +91,13 @@ scores = []
 std = []
 mean = []
 alpha = 0.5
-
+count=0
 for i in range(1000):
     
     Ws = (np.random.randn(100, dim))*curr_std + curr_mean
     b = {}
     for j in range(100):
-        
+        count=count+1
         it = j
         sc, r = play(1, 500, policy_cem)
         b[j] = -r
@@ -122,7 +122,7 @@ env.close()
 example_file = open('newp.csv','w', newline='')
 writer=csv.writer(example_file, delimiter =',')
 writer.writerow(['alpha','episode','score'])
-writer.writerow([alpha, num_episodes, scores ])
+writer.writerow([alpha, count, scores ])
 
 writer.close()
 

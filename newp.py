@@ -45,6 +45,9 @@ import numpy as np
 import gym
 from gym import wrappers
 
+example_file = open('newp.csv','w', newline='')
+writer=csv.writer(example_file, delimiter =',')
+writer.writerow(['alpha','episode','score'])
 #Cross-Entropy
 np.random.seed(0)
 
@@ -104,6 +107,7 @@ for i in range(1000):
     
     scores.append(np.mean([-v for i, v in b.items()]))
     print(scores[-1])
+    writer.writerow([alpha, count, scores ])
     sorted_b = sorted(b.items(), key=operator.itemgetter(1))
     idx = [k for k, v in sorted_b[:20]]
     v = np.array([v for k, v in sorted_b[:20]]).reshape(-1, 1)
@@ -119,10 +123,6 @@ for i in range(1000):
 
 env.close()
 
-example_file = open('newp.csv','w', newline='')
-writer=csv.writer(example_file, delimiter =',')
-writer.writerow(['alpha','episode','score'])
-writer.writerow([alpha, count, scores ])
 
 example_file.close()
 

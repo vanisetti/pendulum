@@ -124,7 +124,6 @@ writer=csv.writer(example_file, delimiter =',')
 writer.writerow(['alpha','episode','score'])
 writer.writerow([alpha, count, scores ])
 
-writer.close()
 
 #plt.plot(std)
 #plt.plot(mean)
